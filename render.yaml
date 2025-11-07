@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: n8n-creative-automation
+    env: node
+    plan: free
+    region: oregon
+    buildCommand: "npm install"
+    startCommand: "npx n8n start"
+    envVars:
+      - key: N8N_ENCRYPTION_KEY
+        sync: false
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: "true"
+      - key: N8N_BASIC_AUTH_USER
+        value: "rehan"
+      - key: N8N_BASIC_AUTH_PASSWORD
+        sync: false
+      - key: WEBHOOK_SECRET_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: WHATSAPP_API_TOKEN
+        sync: false
+      - key: GENERIC_TIMEZONE
+        value: "Asia/Karachi"
